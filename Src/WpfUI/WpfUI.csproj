@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Icons\FileNotFound.png" />
+      <Resource Include="Fonts\Heavitas-lglKw.otf" />
+      <Resource Include="Fonts\Heavitas-nR1gO.ttf" />
+      <Resource Include="Fonts\Heavitas.ttf" />
+      <Resource Include="Fonts\Nulshock.otf" />
+      <Resource Include="Images\About.png" />
+      <Resource Include="Images\FileNotFound.png" />
+      <Resource Include="Images\GearsIcon.png" />
+      <Resource Include="Images\Search.png" />
+      <Resource Include="Images\SettingsIcon.png" />
+      <Resource Include="Images\Steam.png" />
+      <Resource Include="Images\VaultIcon.png" />
+      <Resource Include="Images\Xbox.png" />
+    </ItemGroup>
+
+</Project>

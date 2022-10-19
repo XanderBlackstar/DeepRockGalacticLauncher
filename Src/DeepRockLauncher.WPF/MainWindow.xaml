@@ -1,0 +1,52 @@
+﻿<Window x:Class="DeepRockLauncher.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeepRockLauncher.WPF"
+        x:Name="MainWindowRoot"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal"
+                    Height="50"
+                    Background="CornflowerBlue">
+            <Label Content="Watch Path: "
+                   FontSize="20"
+                   VerticalAlignment="Center"/>
+            <TextBox Text="J:\Private\DeepRockLauncher\TestFolder"
+                     Width="400"
+                     FontSize="20"
+                     VerticalAlignment="Center"
+                     x:Name="PathTextBox"/>
+            <Button Content="Watch"
+                    Width="100"
+                    Height="30"
+                    Click="SetPathClick"/>
+            <Button Content="Add an Event"
+                    Width="100"
+                    Height="30"
+                    Margin="20,0,0,0"
+                    Click="AddEventClick"/>
+            <Button Content="Clear Events"
+                    Width="100"
+                    Height="30"
+                    Margin="20,0,0,0"
+                    Click="ClearEventClick"/>
+            <Button Content="EventList SoundOff"
+                    Width="100"
+                    Height="30"
+                    Margin="20,0,0,0"
+                    Click="SoundOffClick"/>
+        </StackPanel>
+        
+        <ListBox Grid.Row="1" 
+                 ItemsSource="{Binding ElementName=MainWindowRoot, Path=EventList}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,99 @@
+﻿<Window x:Class="DeepRockLauncher.WPF.Windows.ChooseGameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:DeepRockLauncher.WPF.Windows"
+        mc:Ignorable="d"
+        Title="Deep Rock Galactic Launcher" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Background="CornflowerBlue">
+        <Grid.ColumnDefinitions>
+            <!-- Left filler -->
+            <ColumnDefinition Width="10*" />
+            <!-- Steam Btn -->
+            <ColumnDefinition Width="35*" />
+            <!-- Separator -->
+            <ColumnDefinition Width="10*" />
+            <!-- Xbox Btn -->
+            <ColumnDefinition Width="35*" />
+            <!-- Right filler -->
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <!-- Title -->
+            <RowDefinition Height="20*" />
+            <!-- Buttons -->
+            <RowDefinition Height="70*" />
+            <!-- Bottom Filler -->
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <!-- Shadow effect -->
+        <Label Grid.Column="0"
+               Grid.ColumnSpan="5"
+               Grid.Row="0"
+               Content="Please select game service"
+               Style="{StaticResource LabelTitle}"
+               Foreground="Gray"
+               Margin="3,3,0,0" />
+        <!-- Top layer text -->
+        <Label Grid.Column="0"
+               Grid.ColumnSpan="5"
+               Grid.Row="0"
+               Content="Please select game service"
+               Style="{StaticResource LabelTitle}"
+               Foreground="White" />
+
+        <!-- Steam button -->
+        <Button Grid.Column="1"
+                Grid.Row="1"
+                Style="{StaticResource RoundedButton20}"
+                Height="400"
+                Background="White"
+                Click="SteamClick">
+            <Image Source="/WpfUI;Component/Images/Steam.png"
+                   Stretch="Uniform"
+                   Margin="10" />
+        </Button>
+
+        <!-- XBox button -->
+        <Button Grid.Column="3"
+                Grid.Row="1"
+                Style="{StaticResource RoundedButton20}"
+                Height="400"
+                Background="White"
+                Click="XBoxClick">
+            <Image Source="/WpfUI;Component/Images/Xbox.png"
+                   Stretch="Uniform"
+                   Margin="10" />
+        </Button>
+
+        <!-- Vault Button -->
+        <Button Grid.Column="0"
+                Grid.Row="2"
+                Height="48"
+                Margin="0,0,0,30"
+                Click="OpenVaultClick"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+            <Image Source="/WpfUI;Component/Images/VaultIcon.png"
+                   Stretch="Uniform"
+                   Opacity=".50" />
+        </Button>
+
+        <!-- Settings -->
+        <Button Grid.Column="4"
+                Grid.Row="2"
+                Height="48"
+                Margin="0,0,0,30"
+                Click="OpenSettingsClick"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+            <Image Source="/WpfUI;Component/Images/GearsIcon.png"
+                   Stretch="Uniform"
+                   Opacity=".75" />
+        </Button>
+
+    </Grid>
+</Window>

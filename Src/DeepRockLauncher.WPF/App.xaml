@@ -1,0 +1,19 @@
+﻿<Application x:Class="DeepRockLauncher.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DeepRockLauncher.WPF"
+             ShutdownMode="OnExplicitShutdown">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/WpfUI;Component/ResourceDictionaries/Colors.xaml" />
+                <ResourceDictionary Source="/WpfUI;Component/ResourceDictionaries/Fonts.xaml" />
+                <ResourceDictionary Source="/WpfUI;Component/ResourceDictionaries/Buttons.xaml" />
+                <ResourceDictionary Source="/WpfUI;Component/ResourceDictionaries/Labels.xaml" />
+                <ResourceDictionary Source="/WpfUI;Component/ResourceDictionaries/TextBoxes.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>

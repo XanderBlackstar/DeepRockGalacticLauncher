@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <ApplicationIcon>ProgramIcon.ico</ApplicationIcon>
+        <AssemblyName>DeepRockLauncher</AssemblyName>
+        <RootNamespace>DeepRockLauncher</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DeepRockLauncher.Core\DeepRockLauncher.Core.csproj" />
+      <ProjectReference Include="..\WpfUI\WpfUI.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\Fonts\Heavitas.ttf" />
+      <None Remove="Assets\Images\GearsIcon.png" />
+      <None Remove="Assets\Images\SettingsIcon.png" />
+      <None Remove="Assets\Images\Steam.png" />
+      <None Remove="Assets\Images\Xbox.png" />
+      <None Remove="Assets\Fonts\Heavitas-lglKw.otf" />
+      <None Remove="Assets\Fonts\Heavitas-nR1gO.ttf" />
+      <None Remove="Assets\Images\Search.png" />
+      <None Remove="Assets\Images\VaultIcon.png" />
+      <None Remove="Assets\Images\FileNotFound.png" />
+      <None Remove="Assets\Fonts\Nulshock.otf" />
+      <None Remove="Assets\Images\About.png" />
+    </ItemGroup>
+
+</Project>

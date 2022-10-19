@@ -1,0 +1,168 @@
+﻿<Window x:Class="DeepRockLauncher.WPF.Windows.FindPreReqsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:DeepRockLauncher.WPF.Windows"
+        mc:Ignorable="d"
+        x:Name="FindPreReqsWindowRoot"
+        Title="Find Prerequisites" Height="700" Width="1100"
+        Background="CornflowerBlue"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <!-- Title -->
+            <RowDefinition Height="15*" />
+            <!-- Located -->
+            <RowDefinition Height="Auto" />
+            <!-- EventList -->
+            <RowDefinition Height="50*" />
+            <!-- Buttons -->
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        
+        <!-- Title -->
+        <Label Grid.Row="0" 
+               Style="{StaticResource NulshockTitle}"
+               Content="Find Prerequisites"/>
+        
+        <!-- Located Grid -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <!-- Servive -->
+                <RowDefinition Height="Auto" />
+                <!-- Executable -->
+                <RowDefinition Height="Auto" />
+                <!-- Save -->
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <!-- outline -->
+            <Border Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="0"
+                    Grid.RowSpan="3"
+                    BorderThickness="1"
+                    BorderBrush="White"
+            />
+            
+            <!-- Steam -->
+            <Label Grid.Column="0"
+                   Grid.Row="0"
+                   Style="{StaticResource NulshockSubTitle}"
+                   Content="Steam"/>
+            
+            <Label Grid.Column="0"
+                   Grid.Row="1"
+                   Style="{StaticResource NulshockText}"
+                   Content="Executable"/>
+            <Label Grid.Column="0"
+                   Grid.Row="2"
+                   Style="{StaticResource NulshockText}"
+                   Content="Save File"/>
+            <Label Grid.Column="0"
+                   Grid.Row="1"
+                   Style="{StaticResource NulshockText}"
+                   HorizontalAlignment="Right"
+                   Content="{Binding ElementName=FindPreReqsWindowRoot,
+                                     Path=SteamExeStatus.Text, FallbackValue=Not found}"
+                   Foreground="{Binding ElementName=FindPreReqsWindowRoot,
+                                        Path=SteamExeStatus.Foreground}"/>
+            <Label Grid.Column="0"
+                   Grid.Row="2"
+                   Style="{StaticResource NulshockText}"
+                   HorizontalAlignment="Right"
+                   Content="{Binding ElementName=FindPreReqsWindowRoot,
+                                     Path=SteamSaveStatus.Text, FallbackValue=Not found}"
+                   Foreground="{Binding ElementName=FindPreReqsWindowRoot,
+                                        Path=SteamSaveStatus.Foreground}"/>
+
+            
+            <!-- XBox -->
+            <Label Grid.Column="2"
+                   Grid.Row="0"
+                   Style="{StaticResource NulshockSubTitle}"
+                   Content="Xbox"/>
+            
+            <Label Grid.Column="2"
+                   Grid.Row="1"
+                   Style="{StaticResource NulshockText}"
+                   Content="Executable"/>
+            <Label Grid.Column="2"
+                   Grid.Row="2"
+                   Style="{StaticResource NulshockText}"
+                   Content="Save File"/>
+            <Label Grid.Column="2"
+                   Grid.Row="1"
+                   Style="{StaticResource NulshockText}"
+                   HorizontalAlignment="Right"
+                   Content="{Binding ElementName=FindPreReqsWindowRoot,
+                                     Path=XboxExeStatus.Text, FallbackValue=Not found}"
+                   Foreground="{Binding ElementName=FindPreReqsWindowRoot,
+                                        Path=XboxExeStatus.Foreground}"/>
+            <Label Grid.Column="2"
+                   Grid.Row="2"
+                   Style="{StaticResource NulshockText}"
+                   HorizontalAlignment="Right"
+                   Content="{Binding ElementName=FindPreReqsWindowRoot,
+                                     Path=XboxSaveStatus.Text, FallbackValue=Not found}"
+                   Foreground="{Binding ElementName=FindPreReqsWindowRoot,
+                                        Path=XboxSaveStatus.Foreground}"/>
+        </Grid>
+        
+        <!-- outline -->
+        <Border Grid.Column="0"
+                Grid.Row="2"
+                BorderThickness="1"
+                BorderBrush="White"
+        />
+        <ListBox Grid.Row="2"
+                 x:Name="EventListBox"
+                 BorderBrush="DarkSlateGray"
+                 Background="#080808"
+                 Foreground="Cornsilk"
+                 Margin="1"
+                 ItemsSource="{Binding ElementName=FindPreReqsWindowRoot, Path=EventList}"
+                 SelectedItem="{Binding ElementName=FindPreReqsWindowRoot, Path=SelectedItem, Mode=TwoWay}"
+        />
+        
+        <Grid Grid.Row="3">
+               <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="1*"/>
+                      <ColumnDefinition Width="1*"/>
+                      <ColumnDefinition Width="1*"/>
+               </Grid.ColumnDefinitions>
+               <Button Grid.Column="0" 
+                       Style="{StaticResource RoundedButton10}"
+                       Content="Guided Search"
+                       Margin="15"
+                       Click="GuidedSearchClick"/>
+               <Button Grid.Column="1" 
+                       Style="{StaticResource RoundedButton10}"
+                       Content="Full Drive(s) scan"
+                       Margin="15"
+                       Click="FullDriveScanClick"/>
+               <Button Grid.Column="2" 
+                       Style="{StaticResource RoundedButton10}"
+                       Content="Close"
+                       Margin="15"
+                       Click="CloseClick"
+                       />
+               
+        </Grid>
+        
+        
+        
+        <!-- FOR DEBUGGING PURPOSES -->
+        <Button Width="100" 
+                Height="30" 
+                HorizontalAlignment="Left"
+                Content="DEBUG"
+                Click="DebugClick"/>
+    </Grid>
+</Window>

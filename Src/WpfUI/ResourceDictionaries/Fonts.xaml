@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="FontDRG">../Fonts/Heavitas-lglKw.otf #Heavitas</FontFamily>
+    <FontFamily x:Key="FontNulshock">../Fonts/Nulshock.otf #Nulshock Rg</FontFamily>
+    <FontFamily x:Key="FontMonospace">Consolas</FontFamily>
+
+</ResourceDictionary>
